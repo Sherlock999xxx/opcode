@@ -117,7 +117,7 @@ jobs:
       
       - name: Download artifacts from specific run
         if: ${{ inputs.skip_build && inputs.run_id != '' }}
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
           workflow: build-macos.yml
           run_id: ${{ inputs.run_id }}
@@ -126,7 +126,7 @@ jobs:
       
       - name: Download artifacts from latest run
         if: ${{ inputs.skip_build && inputs.run_id == '' }}
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
           workflow: build-macos.yml
           workflow_conclusion: success
